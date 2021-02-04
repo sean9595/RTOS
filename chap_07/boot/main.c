@@ -6,11 +6,14 @@
  */
 #include "stdint.h"
 #include "haluart.h"
-#include "stdio.h"
 #include "halinterrupt.h"
+#include "haltimer.h"
+#include "stdio.h"
+#include "stdlib.h"
 
 static void HW_init(void);
 static void Printf_test(void);
+static void Timer_test(void);
 
 int main()
 {
@@ -27,6 +30,8 @@ int main()
 
     Printf_test();
 
+    Timer_test();
+
     while (1); //infinite loop
 
     /*    i = 100;
@@ -42,6 +47,7 @@ static void HW_init(void)
 {
     HAL_interrupt_init(); //prior to uart_init()
     HAL_uart_init();
+    HAL_timer_init();
 }
 
 static void Printf_test(void)
@@ -56,4 +62,13 @@ static void Printf_test(void)
     debug_printf("%u = 5\n", i);
     debug_printf("dec=%u hex=%x\n", 0xff, 0xff);
     debug_printf("print zero %u\n", 0);
+}
+
+static void Timer_test(void)
+{
+    while(1)
+    {
+        debug_printf("Current count : %u\n", HAL_timer_get_1ms_counter());
+        delay(1000);
+    }
 }
