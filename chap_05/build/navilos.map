@@ -1,0 +1,168 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_udivsi3.o)
+                              build/stdio.o (__aeabi_uidiv)
+/usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_dvmd_tls.o)
+                              /usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build/Entry.os
+LOAD build/main.o
+LOAD build/regs.o
+LOAD build/uart.o
+LOAD build/stdio.o
+LOAD /usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a
+                0x0000000000000000                . = 0x0
+
+.text           0x0000000000000000      0x988
+ *(vector_start)
+ *(.text .rodata)
+ .text          0x0000000000000000       0xd4 build/Entry.os
+                0x0000000000000000                vector_start
+ .text          0x00000000000000d4      0x14c build/main.o
+                0x00000000000000d4                main
+ .rodata        0x0000000000000220       0x9b build/main.o
+ .text          0x00000000000002bb        0x0 build/regs.o
+ *fill*         0x00000000000002bb        0x1 
+ .text          0x00000000000002bc      0x158 build/uart.o
+                0x00000000000002bc                HAL_uart_init
+                0x0000000000000334                HAL_uart_put_char
+                0x0000000000000390                HAL_uart_get_char
+ .text          0x0000000000000414      0x454 build/stdio.o
+                0x0000000000000414                putstr
+                0x0000000000000474                debug_printf
+                0x00000000000004c4                vsprintf
+                0x0000000000000744                utoa
+ .rodata        0x0000000000000868        0x7 build/stdio.o
+ *fill*         0x000000000000086f        0x1 
+ .text          0x0000000000000870      0x114 /usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_udivsi3.o)
+                0x0000000000000870                __udivsi3
+                0x0000000000000870                __aeabi_uidiv
+                0x0000000000000964                __aeabi_uidivmod
+ .text          0x0000000000000984        0x4 /usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_dvmd_tls.o)
+                0x0000000000000984                __aeabi_ldiv0
+                0x0000000000000984                __aeabi_idiv0
+
+.glue_7         0x0000000000000988        0x0
+ .glue_7        0x0000000000000988        0x0 linker stubs
+
+.glue_7t        0x0000000000000988        0x0
+ .glue_7t       0x0000000000000988        0x0 linker stubs
+
+.vfp11_veneer   0x0000000000000988        0x0
+ .vfp11_veneer  0x0000000000000988        0x0 linker stubs
+
+.v4_bx          0x0000000000000988        0x0
+ .v4_bx         0x0000000000000988        0x0 linker stubs
+
+.iplt           0x0000000000000988        0x0
+ .iplt          0x0000000000000988        0x0 build/Entry.os
+
+.rel.dyn        0x0000000000000988        0x0
+ .rel.iplt      0x0000000000000988        0x0 build/Entry.os
+
+.data           0x0000000000000988        0x4
+ *(.data)
+ .data          0x0000000000000988        0x0 build/Entry.os
+ .data          0x0000000000000988        0x0 build/main.o
+ .data          0x0000000000000988        0x4 build/regs.o
+                0x0000000000000988                Uart
+ .data          0x000000000000098c        0x0 build/uart.o
+ .data          0x000000000000098c        0x0 build/stdio.o
+ .data          0x000000000000098c        0x0 /usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_udivsi3.o)
+ .data          0x000000000000098c        0x0 /usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_dvmd_tls.o)
+
+.igot.plt       0x000000000000098c        0x0
+ .igot.plt      0x000000000000098c        0x0 build/Entry.os
+
+.bss            0x000000000000098c      0x800
+ *(.bss)
+ .bss           0x000000000000098c        0x0 build/Entry.os
+ .bss           0x000000000000098c      0x400 build/main.o
+ .bss           0x0000000000000d8c        0x0 build/regs.o
+ .bss           0x0000000000000d8c        0x0 build/uart.o
+ .bss           0x0000000000000d8c      0x400 build/stdio.o
+ .bss           0x000000000000118c        0x0 /usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_udivsi3.o)
+ .bss           0x000000000000118c        0x0 /usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_dvmd_tls.o)
+OUTPUT(build/navilos.axf elf32-littlearm)
+LOAD linker stubs
+
+.ARM.attributes
+                0x0000000000000000       0x2b
+ .ARM.attributes
+                0x0000000000000000       0x1d build/Entry.os
+ .ARM.attributes
+                0x000000000000001d       0x2f build/main.o
+ .ARM.attributes
+                0x000000000000004c       0x2f build/regs.o
+ .ARM.attributes
+                0x000000000000007b       0x2f build/uart.o
+ .ARM.attributes
+                0x00000000000000aa       0x2f build/stdio.o
+ .ARM.attributes
+                0x00000000000000d9       0x1c /usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000000000000f5       0x1c /usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_dvmd_tls.o)
+
+.comment        0x0000000000000000       0x4d
+ .comment       0x0000000000000000       0x4d build/main.o
+                                         0x4e (size before relaxing)
+ .comment       0x000000000000004d       0x4e build/regs.o
+ .comment       0x000000000000004d       0x4e build/uart.o
+ .comment       0x000000000000004d       0x4e build/stdio.o
+
+.debug_line     0x0000000000000000      0x3b4
+ .debug_line    0x0000000000000000       0x6d build/Entry.os
+ .debug_line    0x000000000000006d       0xa9 build/main.o
+ .debug_line    0x0000000000000116       0x4e build/regs.o
+ .debug_line    0x0000000000000164       0xd4 build/uart.o
+ .debug_line    0x0000000000000238      0x17c build/stdio.o
+
+.debug_info     0x0000000000000000     0x1abf
+ .debug_info    0x0000000000000000       0x26 build/Entry.os
+ .debug_info    0x0000000000000026      0x128 build/main.o
+ .debug_info    0x000000000000014e      0xb2a build/regs.o
+ .debug_info    0x0000000000000c78      0xb99 build/uart.o
+ .debug_info    0x0000000000001811      0x2ae build/stdio.o
+
+.debug_abbrev   0x0000000000000000      0x47a
+ .debug_abbrev  0x0000000000000000       0x14 build/Entry.os
+ .debug_abbrev  0x0000000000000014       0xcb build/main.o
+ .debug_abbrev  0x00000000000000df       0xf8 build/regs.o
+ .debug_abbrev  0x00000000000001d7      0x172 build/uart.o
+ .debug_abbrev  0x0000000000000349      0x131 build/stdio.o
+
+.debug_aranges  0x0000000000000000       0x98
+ .debug_aranges
+                0x0000000000000000       0x20 build/Entry.os
+ .debug_aranges
+                0x0000000000000020       0x20 build/main.o
+ .debug_aranges
+                0x0000000000000040       0x18 build/regs.o
+ .debug_aranges
+                0x0000000000000058       0x20 build/uart.o
+ .debug_aranges
+                0x0000000000000078       0x20 build/stdio.o
+
+.debug_str      0x0000000000000000      0x4f6
+ .debug_str     0x0000000000000000       0x64 build/Entry.os
+ .debug_str     0x0000000000000064       0xd8 build/main.o
+                                        0x13f (size before relaxing)
+ .debug_str     0x000000000000013c      0x302 build/regs.o
+                                        0x3fc (size before relaxing)
+ .debug_str     0x000000000000043e       0x47 build/uart.o
+                                        0x43b (size before relaxing)
+ .debug_str     0x0000000000000485       0x71 build/stdio.o
+                                        0x190 (size before relaxing)
+
+.debug_frame    0x0000000000000000      0x1a8
+ .debug_frame   0x0000000000000000       0x6c build/main.o
+ .debug_frame   0x000000000000006c       0x70 build/uart.o
+ .debug_frame   0x00000000000000dc       0xac build/stdio.o
+ .debug_frame   0x0000000000000188       0x20 /usr/local/Caskroom/gcc-arm-embedded/10-2020-q4-major/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/libgcc.a(_udivsi3.o)
